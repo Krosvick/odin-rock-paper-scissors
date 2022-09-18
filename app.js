@@ -1,5 +1,5 @@
 //rock paper scissors game
-function getComputerChoice(){
+/*function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3);
     console.log(randomNumber);
     switch (randomNumber) {
@@ -12,7 +12,7 @@ function getComputerChoice(){
   }
 }
 function getPlayerChoice(){
-    let playerChoice = prompt('Do you choose rock, paper or scissors?');
+    let playerChoice=null;
     playerChoice = playerChoice.toLowerCase();
     return playerChoice;
 }
@@ -48,7 +48,7 @@ function  playRound(){
 function game(){
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < n; i++){
         let result = playRound(playerChoice, computerChoice);
         console.log(result);
         if (result.includes('win')){
@@ -66,5 +66,21 @@ function game(){
     } else {
         return 'It\'s a tie game!';
     }
-}
-console.log(game());
+}*/
+
+const imgPlayer = document.querySelectorAll("#player__hand");
+const imgMachine = document.querySelectorAll("#machine__hand");
+
+//hide all imgplayer and imgmachine that doesnt have the class #default on load event listener//
+window.addEventListener('load', () => {
+    imgPlayer.forEach((img) => {
+        if(!imgPlayer.classList.contains("#default")){
+            imgPlayer.style.display = "none";
+        }
+    });
+    imgMachine.forEach((img) => {
+        if(!imgMachine.classList.contains("#default")){
+            imgMachine.style.display = "none";
+        }
+    });
+});

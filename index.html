@@ -5,10 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="player">
+        <div class="playerSide">
+            <img src="images/rock.svg" alt="rock" class="player__hand rock default">
+            <img src="images/paper.svg" alt="paper" class="player__hand paper">
+            <img src="images/scissors.svg" alt="scissors" class="player__hand scissors">
+        </div>
+        <div class="text">
+            <p>Pick one!</p>
+        </div>
+        <div class="deccision">
+            <p class="deccision__text"></p>
+        </div>
+        <div class="buttons">
+            <button class="player__button rock">Rock</button>
+            <button class="player__button paper">Paper</button>
+            <button class="player__button scissors">Scissors</button>
+        </div>
+        
+
+    </div>
+    <div class="score">
+        <div class="text">
+            <p>Score</p>
+        </div>
+        <div class="score__player">
+            <p>Player</p>
+            <p class="score__player__number">0</p>
+        </div>
+        <div class="score__machine">
+            <p>Machine</p>
+            <p class="score__machine__number">0</p>
+        </div>
+    </div>
+    <div class="machine">
+        <div class="machineSide">
+            <img src="images/rock.svg" alt="rock" class="machine__hand rock default">
+            <img src="images/paper.svg" alt="paper" class="machine__hand paper">
+            <img src="images/scissors.svg" alt="scissors" class="machine__hand scissors">
+        </div>
+        <div class="text">
+            <p>Machine</p>
+        </div>
+    </div>
+     <script src="app.js"></script>
+
 </body>
 </html>
