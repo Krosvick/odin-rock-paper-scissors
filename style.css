@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 body{
     display:flex;
     align-items:center;
     justify-content:center;
     height:100vh;
     font-family: 'Roboto', sans-serif;
+    flex:1;
 
 }
 .player{
@@ -11,22 +14,40 @@ body{
     flex-direction:column;
     align-items:center;
     flex:1;
+    padding-top: 10rem;
+}
+.default, .player__hand{
+    width:10rem;
+    rotate: 75deg;
+    flex-shrink:0;
+}
+.hide{
+    display:none;
+
+}
+.machine__hand.default{
+    width: 10rem;
+    rotate: -75deg;
+    transform: scaleX(-1);
+    flex-shrink: 0;
 }
 .buttons{
     display:flex;
     justify-content:center;
     width:100%;
     max-width:400px;
-    gap:10%;
+    gap:2rem;
 }
 button{
     background-color:transparent;
     border:none;
     color:black;
     outline: black solid 2px;
-    font-size:2rem;
+    font-size:3rem;
     cursor:pointer;
     transition:all 0.3s ease;
+    font-family: 'Bangers', cursive;
+
 }
 button:hover{
     transform:scale(1.1);
@@ -44,4 +65,27 @@ button:hover{
     align-items:center;
     flex:1;
 }
-
+.score{
+    margin-bottom: 4rem;
+}
+.text{
+    font-size:2rem;
+    font-weight:100;
+    margin-bottom:1rem;
+    font-family: 'Bangers', cursive;
+}
+.tittle{
+    font-size:3rem;
+}
+.sub{
+    font-size:1.5rem;
+    font-weight:100;
+    margin-bottom:1rem;
+    font-family: 'Bangers', cursive;
+}
+.player .sub{
+    padding-top: 3rem;
+}
+svg:not(:root) {
+    overflow: visible;
+}

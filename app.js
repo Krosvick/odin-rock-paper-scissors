@@ -1,5 +1,5 @@
 //rock paper scissors game
-/*function getComputerChoice(){
+function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3);
     console.log(randomNumber);
     switch (randomNumber) {
@@ -11,6 +11,7 @@
             return 'scissors';
   }
 }
+/*
 function getPlayerChoice(){
     let playerChoice=null;
     playerChoice = playerChoice.toLowerCase();
@@ -68,19 +69,41 @@ function game(){
     }
 }*/
 
-const imgPlayer = document.querySelectorAll("#player__hand");
-const imgMachine = document.querySelectorAll("#machine__hand");
+const imgPlayer = document.querySelectorAll(".player__hand");
+console.table(imgPlayer);
+const imgMachine = document.querySelectorAll(".machine__hand");
 
 //hide all imgplayer and imgmachine that doesnt have the class #default on load event listener//
 window.addEventListener('load', () => {
     imgPlayer.forEach((img) => {
-        if(!imgPlayer.classList.contains("#default")){
-            imgPlayer.style.display = "none";
+        if (img.classList.contains('default')) {
+            img.classList.toggle('hide');
         }
-    });
+    }
+    );
     imgMachine.forEach((img) => {
-        if(!imgMachine.classList.contains("#default")){
-            imgMachine.style.display = "none";
+        if (img.classList.contains('default')) {
+            img.classList.toggle('hide');
         }
-    });
+    }
+    );
 });
+const buttons = document.querySelectorAll(".player__button");
+//add event listener to all buttons
+//when button is clicked, check the class of the button, and display the corresponding image
+//hide all other images
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        imgPlayer.forEach((img) => {
+            if (img.classList.contains(button.classList[1]) && img.classList.contains('hide')) {
+                img.classList.toggle('hide');
+            } else if (!img.classList.contains(button.classList[1]) && !img.classList.contains('hide')) {
+                img.classList.toggle('hide');
+            }
+                
+            }
+        );
+        });
+});
+
