@@ -22,12 +22,21 @@ window.addEventListener('load', () => {
 
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3);
+    imgMachine.forEach((img2) => {
+        if(!img2.classList.contains('hide')){
+            img2.classList.toggle('hide');
+        }
+    }
+    );
     switch (randomNumber) {
         case 0:
+            imgMachine[0].classList.toggle('hide');
             return 'rock';
         case 1:
+            imgMachine[1].classList.toggle('hide');
             return 'paper';
         case 2:
+            imgMachine[2].classList.toggle('hide');
             return 'scissors';
   }
 }
@@ -58,10 +67,12 @@ function  playRound(){
         }
     }
 }
+let playerScore = 0;
+let computerScore = 0;
 const number = document.querySelectorAll(".number");
 function game(){
-    let playerScore = number[0].textContent;
-    let computerScore = number[1].textContent;
+    playerScore = number[0].textContent;
+    computerScore = number[1].textContent;
     let roundResult = playRound();
     if (roundResult === 1){
         playerScore++;
@@ -80,13 +91,14 @@ function game(){
         }
         );
     }
+    return playerScore, computerScore;
 }
 const buttons = document.querySelectorAll(".player__button");
 //add event listener to all buttons
 //when button is clicked, check the class of the button, and display the corresponding image
 //hide all other images
 let playerChoice = '';
-    buttons.forEach((button) => {
+    buttons.forEach((button) => { //literally thats the whole function of this chunk of code
     button.addEventListener('click', () => {
         imgPlayer.forEach((img, index) => {
             if (img.classList.contains(button.classList[1]) && img.classList.contains('default')) {
@@ -105,9 +117,11 @@ let playerChoice = '';
             }
         }
         );
-        game();
+        if(playerScore <= 5 && computerScore <= 5){
+            game();
         }
-        
+    }
+
         );
 });
 

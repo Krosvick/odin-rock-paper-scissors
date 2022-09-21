@@ -21,6 +21,12 @@ body{
     rotate: 75deg;
     flex-shrink:0;
 }
+.machine__hand{
+    width: 10rem;
+    rotate: -75deg;
+    transform: scaleX(-1);
+    flex-shrink: 0;
+}
 .hide{
     display:none;
 
