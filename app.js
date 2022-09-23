@@ -100,28 +100,30 @@ const buttons = document.querySelectorAll(".player__button");
 let playerChoice = '';
     buttons.forEach((button) => { //literally thats the whole function of this chunk of code
     button.addEventListener('click', () => {
-        imgPlayer.forEach((img, index) => {
-            if (img.classList.contains(button.classList[1]) && img.classList.contains('default')) {
-                if(img.classList.contains('hide')){
-                    img.classList.toggle('hide');
-                }
-                playerChoice = button.classList[1];
-            }else if(img.classList.contains(button.classList[1]) && !img.classList.contains('default') && img.classList.contains('hide')){
-                if(imgPlayer[index-1].classList.contains('default') && !imgPlayer[index-1].classList.contains('hide')){
-                    imgPlayer[index-1].classList.toggle('hide');
-                }
-                img.classList.toggle('hide');
-                playerChoice = button.classList[1];
-            }else if (!img.classList.contains(button.classList[1]) && !img.classList.contains('hide')) {
-                img.classList.toggle('hide');
-            }
-        }
-        );
         if(playerScore <= 5 && computerScore <= 5){
             game();
         }
-    }
+        imgPlayer.forEach((img, index) => {
+            if(!img.classList.contains('hide')){
+                img.classList.toggle('hide');
+            }
+            if (button.classList.contains('rock')){
+                imgPlayer[0].classList.toggle('hide');
+                playerChoice = 'rock';
+            }
+            else if (button.classList.contains('paper')){
+                imgPlayer[1].classList.remove('hide');
+                playerChoice = 'paper';
+            }
+            else if (button.classList.contains('scissors')){
+                imgPlayer[2].classList.toggle('hide');
+                playerChoice = 'scissors';
+            }
+            return playerChoice;
+        });
 
-        );
-});
+            
+        });
+        
+    });
 
