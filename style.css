@@ -1,111 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 body{
+    margin:0;
+    padding:0;
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:space-around;
     height:100vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Bangers', cursive;
     flex:1;
-
+    background-color: #34363C;
+    overflow: hidden;
 }
 .player{
     display:flex;
     flex-direction:column;
     align-items:center;
     flex:1;
-    padding-top: 10rem;
 }
-.default, .player__hand{
-    width:10rem;
-    rotate: 75deg;
-    flex-shrink:0;
-}
-.machine__hand{
-    width: 10rem;
-    rotate: -75deg;
-    transform: scaleX(-1);
-    flex-shrink: 0;
-}
-.hide{
-    display:none;
 
-}
-.machine__hand.default{
-    width: 10rem;
-    rotate: -75deg;
-    transform: scaleX(-1);
-    flex-shrink: 0;
-}
-.buttons{
-    display:flex;
-    justify-content:center;
-    width:100%;
-    max-width:400px;
-    gap:2rem;
-}
-button{
-    background-color:transparent;
-    border:none;
-    color:black;
-    outline: black solid 2px;
-    font-size:3rem;
-    cursor:pointer;
-    transition:all 0.3s ease;
-    font-family: 'Bangers', cursive;
-
-}
-button:hover{
-    transform:scale(1.1);
-}
-.score{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
 .machine{
+    display:flex;
+    flex-direction:row-reverse;
+    align-items:left;
+    flex:1;
+
+}
+.machine_img{
+    position:absolute;
+    width:15rem;
+    height:auto;
+    transform: scaleX(-1);
+    transform: rotate(-90deg);
+    z-index:1;
+    margin-left: 6rem;
+}
+.rectangle{
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    height: 11rem;
+    background-color: #C03636;
+    border-radius: 10px;
+}
+.central_section{
     display:flex;
     flex-direction:column;
     align-items:center;
-    flex:1;
+    flex:1; 
 }
-.score{
-    margin-bottom: 4rem;
-}
-.text{
-    font-size:2rem;
-    font-weight:100;
-    margin-bottom:1rem;
-    font-family: 'Bangers', cursive;
-}
-.tittle{
-    font-size:3rem;
-}
-.sub{
-    font-size:1.5rem;
-    font-weight:100;
-    margin-bottom:1rem;
-    font-family: 'Bangers', cursive;
-}
-.player .sub{
-    padding-top: 3rem;
-}
-svg:not(:root) {
-    overflow: visible;
-}
-#result{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1040;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+
