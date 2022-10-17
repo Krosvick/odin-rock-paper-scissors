@@ -15,10 +15,20 @@ body{
 .player{
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items:left;
     flex:1;
+    gap:3rem;
 }
-
+.rock{
+    transform: rotate(90deg) scaleX(-1) scale(0.8);
+}
+.paper{
+    transform: rotate(180deg) scaleY(-1) scale(1.5);
+    
+}
+.scissors{
+    transform: scale(1.5);
+}
 .machine{
     display:flex;
     flex-direction:row-reverse;
@@ -26,13 +36,16 @@ body{
     flex:1;
 
 }
-.machine_img{
-    position:absolute;
-    width:15rem;
+.player_img, .machine_img{
+    position: absolute;
+    width: 15rem;
     height:auto;
+    z-index:1;    
+}
+
+.machine_img{
     transform: scaleX(-1);
     transform: rotate(-90deg);
-    z-index:1;
     margin-left: 6rem;
 }
 .rectangle{
@@ -40,8 +53,13 @@ body{
     display: flex;
     align-items: center;
     height: 11rem;
-    background-color: #C03636;
     border-radius: 10px;
+}
+.yellow{
+    background-color: #EDF124;
+}
+.red{
+    background-color: #C03636;
 }
 .central_section{
     display:flex;
