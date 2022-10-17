@@ -42,7 +42,11 @@ body{
     height:auto;
     z-index:1;    
 }
-
+.player_img{
+    /*push to the left*/
+    left: -2.2rem;
+    cursor: pointer;
+}
 .machine_img{
     transform: scaleX(-1);
     transform: rotate(-90deg);
@@ -56,10 +60,15 @@ body{
     border-radius: 10px;
 }
 .yellow{
+    width: 10rem;
     background-color: #EDF124;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
 .red{
     background-color: #C03636;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 .central_section{
     display:flex;
@@ -72,8 +81,15 @@ body{
     color: #fff; 
     gap:0.5rem;
     font-size: 2rem;
+    -webkit-text-stroke: 0.2rem #000;
 }
 .versus{
-    width:20rem;
+    width:12rem;
     height:auto;
+}
+a.fill_div{
+    display:block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
 }
