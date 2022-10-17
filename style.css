@@ -67,4 +67,13 @@ body{
     align-items:center;
     flex:1; 
 }
-
+.score_text{
+    display: flex;
+    color: #fff; 
+    gap:0.5rem;
+    font-size: 2rem;
+}
+.versus{
+    width:20rem;
+    height:auto;
+}
