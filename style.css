@@ -22,12 +22,22 @@ body{
 .rock{
     transform: rotate(90deg) scaleX(-1) scale(0.8);
 }
+.rock:hover{
+    transform: rotate(90deg) scaleX(-1) scale(1.0);
+}
 .paper{
     transform: rotate(180deg) scaleY(-1) scale(1.5);
     
 }
+.paper:hover{
+    transform: rotate(180deg) scaleY(-1) scale(1.9);
+}
 .scissors{
     transform: scale(1.5);
+    left: -1.3rem !important; 
+}
+.scissors:hover{
+    transform: scale(1.8);
 }
 .machine{
     display:flex;
@@ -43,9 +53,9 @@ body{
     z-index:1;    
 }
 .player_img{
-    /*push to the left*/
     left: -2.2rem;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 .machine_img{
     transform: scaleX(-1);
