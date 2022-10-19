@@ -1,4 +1,5 @@
 //rock paper scissors game
+const popup = document.querySelector(".popup");
 const result = document.querySelector("#result");
 
 function getComputerChoice(){
@@ -54,11 +55,11 @@ async function game(){
     }
     if (playerScore > computerScore){
         console.log("Player wins game");
-        result.childNodes[1].textContent = "You win!";
+        popup.childNodes[1].textContent = "You win!";
         result.style.display = "flex";
     }else{
         console.log("Computer wins game");
-        result.childNodes[1].textContent = "You lose!";
+        popup.childNodes[1].textContent = "You lose!";
         result.style.display = "flex";
     }
 }   
