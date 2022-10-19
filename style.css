@@ -1,111 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 body{
+    margin:0;
+    padding:0;
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:space-around;
     height:100vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Bangers', cursive;
     flex:1;
-
+    background-color: #34363C;
+    overflow: hidden;
 }
 .player{
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items:left;
     flex:1;
-    padding-top: 10rem;
+    gap:3rem;
 }
-.default, .player__hand{
-    width:10rem;
-    rotate: 75deg;
-    flex-shrink:0;
+.rock{
+    transform: rotate(90deg) scaleX(-1) scale(0.8);
 }
-.machine__hand{
-    width: 10rem;
-    rotate: -75deg;
-    transform: scaleX(-1);
-    flex-shrink: 0;
+.rock:hover{
+    transform: rotate(90deg) scaleX(-1) scale(1.0);
 }
-.hide{
-    display:none;
-
+.paper{
+    transform: rotate(180deg) scaleY(-1) scale(1.5);
+    
 }
-.machine__hand.default{
-    width: 10rem;
-    rotate: -75deg;
-    transform: scaleX(-1);
-    flex-shrink: 0;
+.paper:hover{
+    transform: rotate(180deg) scaleY(-1) scale(1.9);
 }
-.buttons{
-    display:flex;
-    justify-content:center;
-    width:100%;
-    max-width:400px;
-    gap:2rem;
+.scissors{
+    transform: scale(1.5);
+    left: -1.3rem !important; 
 }
-button{
-    background-color:transparent;
-    border:none;
-    color:black;
-    outline: black solid 2px;
-    font-size:3rem;
-    cursor:pointer;
-    transition:all 0.3s ease;
-    font-family: 'Bangers', cursive;
-
-}
-button:hover{
-    transform:scale(1.1);
-}
-.score{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.scissors:hover{
+    transform: scale(1.8);
 }
 .machine{
     display:flex;
-    flex-direction:column;
-    align-items:center;
+    flex-direction:row-reverse;
+    align-items:left;
     flex:1;
+
 }
-.score{
-    margin-bottom: 4rem;
+.player_img, .machine_img{
+    position: absolute;
+    width: 15rem;
+    height:auto;
+    z-index:1;    
 }
-.text{
-    font-size:2rem;
-    font-weight:100;
-    margin-bottom:1rem;
-    font-family: 'Bangers', cursive;
+.player_img{
+    left: -2.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
-.tittle{
-    font-size:3rem;
+.machine_img{
+    transform: scaleX(-1);
+    transform: rotate(-90deg);
+    margin-left: 6rem;
 }
-.sub{
-    font-size:1.5rem;
-    font-weight:100;
-    margin-bottom:1rem;
-    font-family: 'Bangers', cursive;
-}
-.player .sub{
-    padding-top: 3rem;
-}
-svg:not(:root) {
-    overflow: visible;
-}
-#result{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1040;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
+.rectangle{
+    width: 25rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    height: 11rem;
+    border-radius: 10px;
+}
+.yellow{
+    width: 10rem;
+    background-color: #EDF124;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.red{
+    background-color: #C03636;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.central_section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    flex:1; 
+}
+.score_text{
+    display: flex;
+    color: #fff; 
+    gap:0.5rem;
+    font-size: 2rem;
+    -webkit-text-stroke: 0.2rem #000;
+}
+.versus{
+    width:12rem;
+    height:auto;
+}
+a.fill_div{
+    display:block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+#result{
+    display:none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    flex-direction:column;
+    z-index: 2;
+    align-items:center;
+    justify-content:center;
+    flex:1;
+    gap:1rem;
+}
+.popup{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+    background-color: #34363C; 
+    border-radius: 10px;
+    padding: 2rem;
+    width:25rem;
+    height:8rem;
+}
+.outcome{
+    color:#fff; 
 }
