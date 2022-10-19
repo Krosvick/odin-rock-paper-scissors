@@ -1,4 +1,5 @@
 //rock paper scissors game
+const result = document.querySelector("#result");
 
 function getComputerChoice(){
     return Math.floor(Math.random() * 3);
@@ -42,46 +43,24 @@ async function game(){
     let playerDisplay = document.querySelector(".player_score");
     let computerDisplay = document.querySelector(".computer_score");
     while (playerScore < 5 && computerScore < 5){
-        computerDisplay.textContent = computerScore;
-        playerDisplay.textContent = playerScore;
         let result = await playRound();
         if (result == 1){
             playerScore++;
+            playerDisplay.textContent = playerScore;
         }else if (result == 0){
             computerScore++;
+            computerDisplay.textContent = computerScore;
         }   
     }
     if (playerScore > computerScore){
         console.log("Player wins game");
+        result.childNodes[1].textContent = "You win!";
+        result.style.display = "flex";
     }else{
         console.log("Computer wins game");
+        result.childNodes[1].textContent = "You lose!";
+        result.style.display = "flex";
     }
 }   
-/*
-let playerScore = document.querySelector('.player_score').textContent;
-let computerScore = document.querySelector('.computer_score').textContent;
-    playerScore = number[0].textContent;
-    computerScore = number[1].textContent;
-    let roundResult = playRound();
-    if (roundResult === 1){
-        console.log("before" + playerScore);
-        playerScore++;
-        console.log("after" + playerScore);
-        number.forEach((num) => {
-            if (num.classList.contains('score__player')){
-                num.textContent = playerScore++;
-            }
-        });
 
-    }else if (roundResult === -1){
-        console.log("before" + computerScore);
-        computerScore++;
-        console.log("after" + computerScore);
-        number.forEach((num) => {
-            if (num.classList.contains('score__machine')){
-                num.textContent = computerScore++;
-            }
-        }
-        );
-    }*/
 game();

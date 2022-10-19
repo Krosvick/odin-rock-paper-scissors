@@ -103,3 +103,17 @@ a.fill_div{
     width: 100%;
     text-decoration: none;
 }
+#result{
+    display:none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    flex-direction:column;
+    z-index: 2;
+    align-items:center;
+    justify-content:center;
+    flex:1;
+    gap:1rem;
+}
